@@ -75,15 +75,17 @@ export default function Main({ navigation }) {
                         ))
                     )}
             </View>
-            <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.button} onPress={handleDislike}>
-                    <Image src={dislike} />
-                </TouchableOpacity>
+            {users.length > 0 && (
+                <View style={styles.buttonsContainer}>
+                    <TouchableOpacity style={styles.button} onPress={handleDislike}>
+                        <Image src={dislike} />
+                    </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} onPress={handleLike}>
-                    <Image src={like} />
-                </TouchableOpacity>
-            </View>
+                    <TouchableOpacity style={styles.button} onPress={handleLike}>
+                        <Image src={like} />
+                    </TouchableOpacity>
+                </View>
+            )}
         </SafeAreaView>
     )
 }
